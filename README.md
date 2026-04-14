@@ -9,7 +9,7 @@ Everything else is done in terms of data loading, the model just needs to conver
 
 # ISSUES FIXED (Adi , 14/4/2026)
 
-- GNN Collapse Fixed: Your implementation of PairNorm, F.leaky_relu, and the residual connection (out = out + self_emb) has successfully diversified the node embeddings. The mean cosine similarity dropped from 0.9925 to 0.0119, meaning the nodes are now distinct.
+- GNN Collapse Fixed: The implementation of PairNorm, F.leaky_relu, and the residual connection (out = out + self_emb) has successfully diversified the node embeddings. The mean cosine similarity dropped from 0.9925 to 0.0119, meaning the nodes are now distinct.
 - Training and Convergence: The model is training without errors. The MSE loss decreased from 1.5840 to 0.0763 over 40 epochs, showing clear convergence.
 - Code Execution: The pipeline from data preparation to hybrid temporal-spatial prediction is running smoothly on the GPU.
 
