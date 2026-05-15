@@ -1,6 +1,6 @@
 # PhyRes: Physics-Informed Residual Graph Neural Networks for Urban Heat Island Diagnostics
 
-> **IGARSS 2026** | Ayush Gouda, Aditya Prakash, Hema M S  
+> Ayush Gouda, Aditya Prakash, Hema M S  
 > Department of Computer Science & Engineering, RV Institute of Technology and Management
 
 [![Python](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org/)
@@ -72,41 +72,87 @@ Input: [Nodes × Time Window × Features]
 ```
 PhyRes-Physics-Informed-UHI-Diagnostics/
 │
-├── main.ipynb                  # ← Primary source. All experiments run from here.
+├── README.md
+├── requirements.txt
 │
 ├── data/
-│   ├── bengaluru/
-│   │   ├── Blr_April_PhyRes_Final.csv
-│   │   ├── Blr_Winter_Dec_PhyRes_Final.csv
-│   │   └── Blr_Nodes_PhyRes_Final.geojson
-│   └── hyderabad/
-│       ├── Hyderabad_April_PhyRes_Final.csv
-│       ├── Hyderabad_Winter_Dec_PhyRes_Final.csv
-│       └── Hyd_Nodes_PhyRes_Final.geojson
-│
-├── checkpoints/
-│   ├── phyres-blr-april.pt
-│   ├── phyres-blr-dec.pt
-│   ├── phyres-hyd-april.pt
-│   └── phyres-hyd-dec.pt
-│
-├── outputs/
-│   ├── figures/
-│   │   ├── causal_pruning_diagram.png
-│   │   ├── adjacency_sparsity_blr.png
-│   │   ├── adjacency_sparsity_hyd.png
-│   │   ├── regression_blr_april.png
-│   │   ├── regression_hyd_dec.png
-│   │   ├── residual_map_blr_april.png
-│   │   └── residual_map_hyd_dec.png
-│   └── logs/
-│       └── training_logs.txt
+│   ├── Blr_Nodes_Final.geojson
+│   └── Hyd_Nodes_Final.geojson
 │
 ├── paper/
-│   └── PhyRes_IGARSS2026.pdf
+│   ├── AI_content_report.pdf
+│   ├── PhyRes.pdf
+│   └── plagiarism_report.pdf
 │
-├── requirements.txt
-└── README.md
+├── results/
+│   ├── Bangalore/
+│   │   ├── April_Models/
+│   │   │   ├── phyres-model.pt
+│   │   │   ├── vanilla_baseline_model.pt
+│   │   │   └── zero_guidance_np_model.pt
+│   │   ├── Adjaceny_Check.png
+│   │   ├── April_Baseline_Model_City.png
+│   │   ├── April_Baseline_Model_Corr.png
+│   │   ├── April_Baseline_Model_Cosine.png
+│   │   ├── April_Baseline_Model_Scatter+Hist.png
+│   │   ├── April_NoPruning_City.png
+│   │   ├── April_NoPruning_Corr.png
+│   │   ├── April_NoPruning_Cosine.png
+│   │   ├── April_NoPruning_Scatter+Hist.png
+│   │   ├── April_PhyRes_City.png
+│   │   ├── April_PhyRes_Corr.png
+│   │   ├── April_PhyRes_Cosine.png
+│   │   ├── April_PhyRes_Scatter+Hist.png
+│   │   ├── April_Results.txt
+│   │   ├── December_Baseline_City.png
+│   │   ├── December_Baseline_Cosine.png
+│   │   ├── December_Baseline_Model_Corr.png
+│   │   ├── December_Baseline_Model_Scatter+Hist.png
+│   │   ├── December_NoPruning_City.png
+│   │   ├── December_NoPruning_Corr.png
+│   │   ├── December_NoPruning_Cosine.png
+│   │   ├── December_NoPruning_Scatter+Hist.png
+│   │   ├── December_PhyRes_City.png
+│   │   ├── December_PhyRes_Cosine.png
+│   │   ├── December_PhyRes_Scatter+Hist.png
+│   │   ├── December_Results.txt
+│   │   └── Decemeber_PhyRes_Corr.png
+│   │
+│   └── Hyderabad/
+│       ├── April Models/
+│       │   ├── phyres-model.pt
+│       │   ├── vanilla_baseline_model.pt
+│       │   └── zero_guidance_np_model.pt
+│       ├── Adjacency_Check.png
+│       ├── April_Baseline_City.png
+│       ├── April_Baseline_Corr.png
+│       ├── April_Baseline_Scatter+Hist.png
+│       ├── April_Bsseline_Collapse.png
+│       ├── April_NoPruning_City.png
+│       ├── April_NoPruning_Collapse.png
+│       ├── April_NoPruning_Corr.png
+│       ├── April_NoPruning_Scatter+Hist.png
+│       ├── April_PhyRes_City.png
+│       ├── April_PhyRes_Collapse.png
+│       ├── April_PhyRes_Corr.png
+│       ├── April_PhyRes_Scatter+Hist.png
+│       ├── April_Results.txt
+│       ├── December_Baseline_City.png
+│       ├── December_Baseline_Corr.png
+│       ├── December_Baseline_Scatter+Hist.png
+│       ├── December_Bsseline_Collapse.png
+│       ├── December_NoPruning_City.png
+│       ├── December_NoPruning_Collapse.png
+│       ├── December_NoPruning_Corr.png
+│       ├── December_NoPruning_Scatter+Hist.png
+│       ├── December_PhyRes_City.png
+│       ├── December_PhyRes_Collapse.png
+│       ├── December_PhyRes_Corr.png
+│       ├── December_PhyRes_Scatter+Hist.png
+│       └── December_Results.txt
+│
+└── src/
+    └── main.ipynb
 ```
 
 ---
@@ -185,19 +231,19 @@ gdf = gpd.read_file('/content/<CITY>_Nodes_PhyRes_Final.geojson').to_crs(epsg=32
 
 **Causal Advection Pruning — Figure 1**
 
-![Causal Pruning Diagram](outputs/figures/causal_pruning_diagram.png)
+![Causal Pruning Diagram](./results/Bangalore/Adjaceny_Check.png)
 
 **Residual Heat Map — Bengaluru April**
 
-![Residual Map Bengaluru](outputs/figures/residual_map_blr_april.png)
+![Residual Map Bengaluru](./results/Bangalore/April_PhyRes_City.png)
 
 **Residual Heat Map — Hyderabad December**
 
-![Residual Map Hyderabad](outputs/figures/residual_map_hyd_dec.png)
+![Residual Map Hyderabad](./results/Hyderabad/December_PhyRes_City.png)
 
 **Regression Analysis (True vs Predicted)**
 
-![Regression Plot](outputs/figures/regression_blr_april.png)
+![Regression Plot](./results/Bangalore/April_PhyRes_Scatter+Hist.png)
 
 ---
 
@@ -206,8 +252,8 @@ gdf = gpd.read_file('/content/<CITY>_Nodes_PhyRes_Final.geojson').to_crs(epsg=32
 | Model | RMSE | Node Collapse Rate | rBldg |
 |-------|------|--------------------|-------|
 | PhyRes (ours) | **0.610°C** | **1.85%** | **0.925** |
-| No-Pruning (static graph) | 0.951°C | 6.84% | 0.144 |
-| Baseline (MSE only) | 0.615°C | — | 0.000 |
+| No-Pruning (static graph) | 0.951°C | 1.02% | 0.144 |
+| Baseline (MSE only) | 0.615°C | 6.84% | 0.000 |
 
 Advection-based pruning yields a **23.2× improvement** in morphological accuracy gains over soft-constraint baselines and a **73.8% reduction in FLOPs**.
 
@@ -218,11 +264,12 @@ Advection-based pruning yields a **23.2× improvement** in morphological accurac
 If you use PhyRes in your research, please cite:
 
 ```bibtex
-@inproceedings{gouda2026phyres,
-  title     = {PhyRes: Physics-Informed Residual Graph Neural Networks for Urban Heat Island Diagnostics},
-  author    = {Gouda, Ayush and Prakash, Aditya and {Hema M S}},
-  booktitle = {Proceedings of the IEEE International Geoscience and Remote Sensing Symposium (IGARSS)},
-  year      = {2026}
+@misc{gouda2026phyres,
+  title        = {PhyRes: Physics-Informed Residual Graph Neural Networks for Urban Heat Island Diagnostics},
+  author       = {Gouda, Ayush and Prakash, Aditya and {Hema M S}},
+  year         = {2026},
+  howpublished = {\url{https://github.com/AyushG-1210/PhyRes-Physics-Informed-UHI-Diagnostics}},
+  note         = {Preprint. Under review at IEEE International Geoscience and Remote Sensing Symposium (IGARSS) 2026}
 }
 ```
 
