@@ -1,0 +1,78 @@
+December PhyRes Model:
+
+Epoch [1/70] | Train MSE: 0.1465 | Test MSE: 0.1239 | Margin: 0.1394 | Cool: 0.1197
+Epoch [5/70] | Train MSE: 0.0373 | Test MSE: 0.2391 | Margin: 0.1374 | Cool: 0.0569
+Epoch [10/70] | Train MSE: 0.0207 | Test MSE: 0.1491 | Margin: 0.0938 | Cool: 0.0410
+Epoch [15/70] | Train MSE: 0.0156 | Test MSE: 0.1570 | Margin: 0.0756 | Cool: 0.0382
+Epoch [20/70] | Train MSE: 0.0132 | Test MSE: 0.1076 | Margin: 0.0709 | Cool: 0.0353
+Epoch [25/70] | Train MSE: 0.0118 | Test MSE: 0.1361 | Margin: 0.0665 | Cool: 0.0350
+Epoch [30/70] | Train MSE: 0.0115 | Test MSE: 0.1125 | Margin: 0.0635 | Cool: 0.0344
+Epoch [35/70] | Train MSE: 0.0106 | Test MSE: 0.1215 | Margin: 0.0613 | Cool: 0.0337
+Epoch [40/70] | Train MSE: 0.0100 | Test MSE: 0.1098 | Margin: 0.0596 | Cool: 0.0338
+Epoch [45/70] | Train MSE: 0.0096 | Test MSE: 0.0994 | Margin: 0.0588 | Cool: 0.0344
+Epoch [50/70] | Train MSE: 0.0092 | Test MSE: 0.1032 | Margin: 0.0582 | Cool: 0.0341
+Epoch [55/70] | Train MSE: 0.0092 | Test MSE: 0.1086 | Margin: 0.0580 | Cool: 0.0342
+Epoch [60/70] | Train MSE: 0.0091 | Test MSE: 0.1037 | Margin: 0.0580 | Cool: 0.0340
+Epoch [65/70] | Train MSE: 0.0091 | Test MSE: 0.1049 | Margin: 0.0578 | Cool: 0.0340
+Epoch [70/70] | Train MSE: 0.0090 | Test MSE: 0.1044 | Margin: 0.0578 | Cool: 0.0340
+
+3. Final Evaluation (ON TEST SET ONLY)...
+FINAL METRICS: RMSE: 1.739° | MAE: 1.415°
+RESIDUAL IMPACT: Max: 3.58° | Min: -2.60° | Mean: -0.12°
+
+Mean Cosine Similarity: 0.0125
+Min Cosine Similarity:  -0.9905
+Max Cosine Similarity:  1.0000
+----------------------------------------
+Pairs with >95% Similarity: 23,634
+Percentage of Collapsed Pairs: 0.68%
+----------------------------------------
+✅ STATUS: PASS. The graph has successfully avoided over-smoothing collapse.
+
+December Baseline Model:
+
+Epoch [1/70] | Train MSE: 0.6623 | Test MSE: 0.3853 | Margin: 0.1645 | Cool: 0.1315
+Epoch [10/70] | Train MSE: 0.0622 | Test MSE: 0.0639 | Margin: 0.1645 | Cool: 0.1315
+Epoch [20/70] | Train MSE: 0.0360 | Test MSE: 0.1270 | Margin: 0.1645 | Cool: 0.1315
+Epoch [30/70] | Train MSE: 0.0268 | Test MSE: 0.1155 | Margin: 0.1645 | Cool: 0.1315
+Epoch [40/70] | Train MSE: 0.0247 | Test MSE: 0.1287 | Margin: 0.1645 | Cool: 0.1315
+Epoch [50/70] | Train MSE: 0.0240 | Test MSE: 0.1172 | Margin: 0.1645 | Cool: 0.1315
+Epoch [60/70] | Train MSE: 0.0235 | Test MSE: 0.1186 | Margin: 0.1645 | Cool: 0.1315
+Epoch [70/70] | Train MSE: 0.0235 | Test MSE: 0.1185 | Margin: 0.1645 | Cool: 0.1315
+
+3. Evaluating Baseline Model on Test Data...
+FINAL METRICS: RMSE: 1.310° | MAE: 0.863°
+RESIDUAL IMPACT: Max: 0.00° | Min: 0.00° | Mean: 0.00°
+
+Mean Cosine Similarity: 0.0154
+Min Cosine Similarity:  -0.9861
+Max Cosine Similarity:  1.0000
+----------------------------------------
+Pairs with >95% Similarity: 111,246
+Percentage of Collapsed Pairs: 3.19%
+----------------------------------------
+✅ STATUS: PASS. The graph has successfully avoided over-smoothing collapse.
+
+December No Pruning Model:
+
+Epoch [1/70] | Train MSE: 0.1781 | Test MSE: 0.2310 | Margin: 0.0541 | Cool: 0.2895
+Epoch [10/70] | Train MSE: 0.0279 | Test MSE: 0.1556 | Margin: 0.0870 | Cool: 0.2313
+Epoch [20/70] | Train MSE: 0.0137 | Test MSE: 0.1264 | Margin: 0.0993 | Cool: 0.2142
+Epoch [30/70] | Train MSE: 0.0082 | Test MSE: 0.1027 | Margin: 0.1108 | Cool: 0.2003
+Epoch [40/70] | Train MSE: 0.0057 | Test MSE: 0.0869 | Margin: 0.1137 | Cool: 0.1963
+Epoch [50/70] | Train MSE: 0.0052 | Test MSE: 0.0873 | Margin: 0.1153 | Cool: 0.1943
+Epoch [60/70] | Train MSE: 0.0051 | Test MSE: 0.0881 | Margin: 0.1159 | Cool: 0.1934
+Epoch [70/70] | Train MSE: 0.0050 | Test MSE: 0.0887 | Margin: 0.1158 | Cool: 0.1936
+
+3. Evaluating Zero-Guidance Model on Test Data...
+FINAL METRICS: RMSE: 1.603° | MAE: 1.228°
+RESIDUAL IMPACT: Max: 2.52° | Min: -0.32° | Mean: 0.66°
+
+Mean Cosine Similarity: 0.0118
+Min Cosine Similarity:  -0.9889
+Max Cosine Similarity:  1.0000
+----------------------------------------
+Pairs with >95% Similarity: 70,394
+Percentage of Collapsed Pairs: 2.02%
+----------------------------------------
+✅ STATUS: PASS. The graph has successfully avoided over-smoothing collapse.

@@ -1,0 +1,92 @@
+Using device: cuda
+Loading datasets...
+Aligning spatial and temporal indices...
+Extracting chronological sequences...
+Raw Timeline Tensor: torch.Size([1867, 336, 11])
+Applying Global Normalization...
+Saved Temperature Scaling -> Mean: 298.31, STD: 4.01
+Building Spatial Adjacency Matrix...
+
+✅ ETL Pipeline Complete. Ready to feed into PhyResDataset.
+
+Train Samples: 228 | Val Samples: 36 | Test Samples: 36
+Base Edges: 14936 | Pruned Edges (Sample 0): 7441
+
+April PhyRes Model:
+
+Epoch [1/70] | Train MSE: 0.1920 | Test MSE: 0.0691 | Margin: 0.1233 | Cool: 0.1476
+Epoch [5/70] | Train MSE: 0.0664 | Test MSE: 0.0536 | Margin: 0.1102 | Cool: 0.0714
+Epoch [10/70] | Train MSE: 0.0478 | Test MSE: 0.0532 | Margin: 0.0872 | Cool: 0.0492
+Epoch [15/70] | Train MSE: 0.0303 | Test MSE: 0.0475 | Margin: 0.0649 | Cool: 0.0390
+Epoch [20/70] | Train MSE: 0.0242 | Test MSE: 0.0343 | Margin: 0.0532 | Cool: 0.0370
+Epoch [25/70] | Train MSE: 0.0212 | Test MSE: 0.0327 | Margin: 0.0479 | Cool: 0.0392
+Epoch [30/70] | Train MSE: 0.0179 | Test MSE: 0.0257 | Margin: 0.0453 | Cool: 0.0395
+Epoch [35/70] | Train MSE: 0.0164 | Test MSE: 0.0312 | Margin: 0.0448 | Cool: 0.0386
+Epoch [40/70] | Train MSE: 0.0138 | Test MSE: 0.0265 | Margin: 0.0428 | Cool: 0.0394
+Epoch [45/70] | Train MSE: 0.0120 | Test MSE: 0.0293 | Margin: 0.0420 | Cool: 0.0382
+Epoch [50/70] | Train MSE: 0.0112 | Test MSE: 0.0280 | Margin: 0.0412 | Cool: 0.0393
+Epoch [55/70] | Train MSE: 0.0111 | Test MSE: 0.0256 | Margin: 0.0410 | Cool: 0.0390
+Epoch [60/70] | Train MSE: 0.0108 | Test MSE: 0.0265 | Margin: 0.0408 | Cool: 0.0392
+Epoch [65/70] | Train MSE: 0.0107 | Test MSE: 0.0263 | Margin: 0.0407 | Cool: 0.0391
+Epoch [70/70] | Train MSE: 0.0105 | Test MSE: 0.0263 | Margin: 0.0407 | Cool: 0.0390
+
+3. Final Evaluation (ON TEST SET ONLY)...
+FINAL METRICS: RMSE: 0.920° | MAE: 0.664°
+RESIDUAL IMPACT: Max: 3.67° | Min: -2.72° | Mean: -0.14°
+
+Mean Cosine Similarity: 0.0251
+Min Cosine Similarity:  -0.9610
+Max Cosine Similarity:  1.0000
+----------------------------------------
+Pairs with >95% Similarity: 37,008
+Percentage of Collapsed Pairs: 1.06%
+----------------------------------------
+✅ STATUS: PASS. The graph has successfully avoided over-smoothing collapse.
+
+April Baseline Model:
+
+Epoch [1/70] | Train MSE: 0.7980 | Test MSE: 0.2831 | Margin: 0.1645 | Cool: 0.1315
+Epoch [10/70] | Train MSE: 0.0884 | Test MSE: 0.0497 | Margin: 0.1645 | Cool: 0.1315
+Epoch [20/70] | Train MSE: 0.0488 | Test MSE: 0.0456 | Margin: 0.1645 | Cool: 0.1315
+Epoch [30/70] | Train MSE: 0.0384 | Test MSE: 0.0301 | Margin: 0.1645 | Cool: 0.1315
+Epoch [40/70] | Train MSE: 0.0343 | Test MSE: 0.0309 | Margin: 0.1645 | Cool: 0.1315
+Epoch [50/70] | Train MSE: 0.0320 | Test MSE: 0.0396 | Margin: 0.1645 | Cool: 0.1315
+Epoch [60/70] | Train MSE: 0.0314 | Test MSE: 0.0326 | Margin: 0.1645 | Cool: 0.1315
+Epoch [70/70] | Train MSE: 0.0312 | Test MSE: 0.0332 | Margin: 0.1645 | Cool: 0.1315
+
+3. Evaluating Baseline Model on Test Data...
+FINAL METRICS: RMSE: 0.732° | MAE: 0.463°
+RESIDUAL IMPACT: Max: 0.00° | Min: 0.00° | Mean: 0.00°
+
+Mean Cosine Similarity: 0.0277
+Min Cosine Similarity:  -0.9762
+Max Cosine Similarity:  1.0000
+----------------------------------------
+Pairs with >95% Similarity: 86,748
+Percentage of Collapsed Pairs: 2.49%
+----------------------------------------
+✅ STATUS: PASS. The graph has successfully avoided over-smoothing collapse.
+
+April No-Pruning Model:
+
+Epoch [1/70] | Train MSE: 0.1804 | Test MSE: 0.0551 | Margin: 0.0788 | Cool: 0.2581
+Epoch [10/70] | Train MSE: 0.0470 | Test MSE: 0.0552 | Margin: 0.0782 | Cool: 0.2459
+Epoch [20/70] | Train MSE: 0.0216 | Test MSE: 0.0345 | Margin: 0.0965 | Cool: 0.2227
+Epoch [30/70] | Train MSE: 0.0184 | Test MSE: 0.0332 | Margin: 0.1060 | Cool: 0.2115
+Epoch [40/70] | Train MSE: 0.0134 | Test MSE: 0.0281 | Margin: 0.1088 | Cool: 0.2084
+Epoch [50/70] | Train MSE: 0.0105 | Test MSE: 0.0273 | Margin: 0.1124 | Cool: 0.2037
+Epoch [60/70] | Train MSE: 0.0091 | Test MSE: 0.0226 | Margin: 0.1144 | Cool: 0.2012
+Epoch [70/70] | Train MSE: 0.0082 | Test MSE: 0.0217 | Margin: 0.1154 | Cool: 0.2004
+
+3. Evaluating Zero-Guidance Model on Test Data...
+FINAL METRICS: RMSE: 0.836° | MAE: 0.595°
+RESIDUAL IMPACT: Max: 2.89° | Min: -0.54° | Mean: 0.75°
+
+Mean Cosine Similarity: 0.0137
+Min Cosine Similarity:  -0.9659
+Max Cosine Similarity:  1.0000
+----------------------------------------
+Pairs with >95% Similarity: 68,562
+Percentage of Collapsed Pairs: 1.97%
+----------------------------------------
+✅ STATUS: PASS. The graph has successfully avoided over-smoothing collapse.
