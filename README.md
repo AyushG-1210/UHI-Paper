@@ -266,12 +266,12 @@ Advection-based pruning yields a **23.2× improvement** in morphological accurac
 If you use PhyRes in your research, please cite:
 
 ```bibtex
-@misc{gouda2026phyres,
-  title        = {PhyRes: Physics-Informed Residual Graph Neural Networks for Urban Heat Island Diagnostics},
-  author       = {Gouda, Ayush and Prakash, Aditya and {Hema M S}},
-  year         = {2026},
-  howpublished = {\url{https://github.com/AyushG-1210/PhyRes-Physics-Informed-UHI-Diagnostics}},
-  note         = {Preprint. Under review at IEEE International Geoscience and Remote Sensing Symposium (IGARSS) 2026}
+@inproceedings{Goud2611:PhyRes,
+  author    = {Ayush Gouda},
+  title     = {{PhyRes: Physics-Informed Residual Graph Neural Networks for Urban Heat Island Diagnostics}},
+  booktitle = {2026 IEEE India Geoscience and Remote Sensing Symposium (InGARSS 2026)},
+  address   = {Hyderabad, India},
+  year      = {2026}
 }
 ```
 
